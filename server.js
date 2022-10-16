@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname,"client/build")))
 app.use(express.json())
 
 const PORT = process.env.PORT || 5000;
-
+app.use(express.static(path.join(__dirname,"client/build")))
 routes.forEach(route => {
     app[route.method](route.path, route.handler);
 });
